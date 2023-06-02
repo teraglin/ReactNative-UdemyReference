@@ -1,8 +1,9 @@
 <script src="http://192.168.15.72:8097"></script>;
 
 import { useState } from "react";
-import { StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import Colors from "./constants/colors";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
@@ -22,7 +23,7 @@ export default function App() {
 
   return (
     <LinearGradient
-      colors={["#4e0329", "#ddb52f"]}
+      colors={[Colors.primary700, Colors.accent500]}
       style={styles.app}
     >
       <ImageBackground
@@ -31,7 +32,7 @@ export default function App() {
         style={styles.app}
         imageStyle={styles.imageBackground}
       >
-        {screen}
+        <SafeAreaView style={styles.app}>{screen}</SafeAreaView>
       </ImageBackground>
     </LinearGradient>
   );
